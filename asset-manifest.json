@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-homework-template/static/css/main.7acaea2f.css",
-    "main.js": "/react-homework-template/static/js/main.07d3183d.js",
-    "index.html": "/react-homework-template/index.html",
-    "main.7acaea2f.css.map": "/react-homework-template/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/react-homework-template/static/js/main.07d3183d.js.map"
+    "main.css": "/Snake-Game/static/css/main.7acaea2f.css",
+    "main.js": "/Snake-Game/static/js/main.d55c4372.js",
+    "index.html": "/Snake-Game/index.html",
+    "main.7acaea2f.css.map": "/Snake-Game/static/css/main.7acaea2f.css.map",
+    "main.d55c4372.js.map": "/Snake-Game/static/js/main.d55c4372.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/js/main.d55c4372.js"
   ]
 }
