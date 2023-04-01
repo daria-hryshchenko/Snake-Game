@@ -6,8 +6,8 @@ import {
   Row,
   Cell,
   Food,
-  //   ButtonContainer,
-  //   Button,
+  ButtonContainer,
+  Button,
 } from './Game.styled';
 
 const ROWS = 20;
@@ -65,6 +65,18 @@ const Game = () => {
     setDirection(newDirection);
   };
 
+  const handlePauseClick = () => {
+    setGamePaused(!gamePaused);
+  };
+
+  const handleRestartClick = () => {
+    setSnake(initialSnake);
+    setFood(initialFood);
+    setDirection('right');
+    setGamePaused(false);
+    setGameOver(false);
+  };
+
   useEffect(() => {
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
@@ -97,6 +109,12 @@ const Game = () => {
           </Row>
         ))}
       </Grid>
+      <ButtonContainer>
+        <Button onClick={handlePauseClick}>
+          {gamePaused ? 'Resume' : 'Pause'}
+        </Button>
+        <Button onClick={handleRestartClick}>Restart</Button>
+      </ButtonContainer>
     </GameContainer>
   );
 };
