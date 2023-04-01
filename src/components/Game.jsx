@@ -8,6 +8,7 @@ import {
   Food,
   ButtonContainer,
   Button,
+  GameOverMessage,
 } from './Game.styled';
 
 const ROWS = 20;
@@ -52,6 +53,22 @@ const Game = () => {
       }
       const newSnake = [head, ...snake.slice(0, -1)];
       setSnake(newSnake);
+
+      // Check for game over conditions
+      if (
+        head.row < 0 ||
+        head.row >= ROWS ||
+        head.col < 0 ||
+        head.col >= COLS ||
+        newSnake
+          .slice(1)
+          .some(
+            snakeCell =>
+              snakeCell.row === head.row && snakeCell.col === head.col
+          )
+      ) {
+        setGameOver(true);
+      }
     }
   }, [direction, gameOver, gamePaused, snake]);
 
@@ -60,9 +77,9 @@ const Game = () => {
       ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)
     ) {
       event.preventDefault();
+      const newDirection = event.key.replace('Arrow', '').toLowerCase();
+      setDirection(newDirection);
     }
-    const newDirection = event.key.replace('Arrow', '').toLowerCase();
-    setDirection(newDirection);
   };
 
   const handlePauseClick = () => {
@@ -91,6 +108,14 @@ const Game = () => {
 
   return (
     <GameContainer>
+      {gameOver && (
+        <GameOverMessage>
+          You lost!
+          <ButtonContainer>
+            <Button onClick={handleRestartClick}>Restart</Button>
+          </ButtonContainer>
+        </GameOverMessage>
+      )}
       <h1>Snake Game</h1>
       <Grid>
         {Array.from({ length: ROWS }).map((_, rowIndex) => (
@@ -113,7 +138,6 @@ const Game = () => {
         <Button onClick={handlePauseClick}>
           {gamePaused ? 'Resume' : 'Pause'}
         </Button>
-        <Button onClick={handleRestartClick}>Restart</Button>
       </ButtonContainer>
     </GameContainer>
   );
