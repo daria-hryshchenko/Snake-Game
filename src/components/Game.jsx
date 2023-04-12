@@ -31,6 +31,7 @@ const Game = () => {
   const [direction, setDirection] = useState('right');
   const [gamePaused, setGamePaused] = useState(false);
   const [gameOver, setGameOver] = useState(false);
+  const [gameStarted, setGameStarted] = useState(false);
 
   const moveSnake = useCallback(() => {
     if (!gamePaused && !gameOver) {
@@ -105,6 +106,16 @@ const Game = () => {
     }, 500);
     return () => clearInterval(intervalId);
   }, [moveSnake]);
+
+  if (!gameStarted) {
+    return (
+      <GameContainer>
+        <ButtonContainer>
+          <Button onClick={() => setGameStarted(true)}>Start Game</Button>
+        </ButtonContainer>
+      </GameContainer>
+    );
+  }
 
   return (
     <GameContainer>
