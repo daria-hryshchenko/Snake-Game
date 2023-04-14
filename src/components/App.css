@@ -1,0 +1,80 @@
+.game-started {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 200px auto;
+}
+
+.start-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.snake-gif {
+  border: none;
+}
+
+.game-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.title-result {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+}
+
+.button-play {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 26px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  background-color: #0057b7;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 10px;
+}
+
+.button-play:hover {
+  background-color: #ffdd00;
+  color: black;
+}
+
+.btn-start {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 26px;
+  font-weight: 700;
+  padding: 20px 50px;
+  border: 3px solid #ffdd00;
+  border-radius: 10px;
+  color: #0057b7;
+  background-color: transparent;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgb(255, 255, 255);
+  margin: 5px;
+}
+
+.food {
+  background-color: #ffdd00;
+}
+
+.snake {
+  background-color: #0057b7;
+}
