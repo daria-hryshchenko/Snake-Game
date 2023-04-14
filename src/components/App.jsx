@@ -104,6 +104,7 @@ export const App = () => {
           <iframe
             src="https://giphy.com/embed/3oKIPCohynIR4gBdhm"
             className="snake-gif"
+            title="snake-gif"
             allowFullScreen
           ></iframe>
         </div>
