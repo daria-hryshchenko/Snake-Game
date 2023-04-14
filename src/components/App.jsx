@@ -40,7 +40,7 @@ export const App = () => {
       const interval = gameLoop();
       return () => clearInterval(interval);
     }
-  }, [gamePaused, snake]);
+  });
 
   const generatedFood = () => {
     let newFood;
@@ -50,6 +50,7 @@ export const App = () => {
         Math.floor(Math.random() * BOARD_SIZE),
       ];
     } while (
+      // eslint-disable-next-line no-loop-func
       snake.some(elem => elem[0] === newFood[0] && elem[1] === newFood[1])
     );
     setFood(newFood);
